@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
-import { LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { SpendingLineChart, SpendingPieChart } from "../components/Charts";
 
 const LOCAL_KEY = "spending-records";
 const CATEGORY_KEY = "spending-categories";
@@ -155,17 +155,7 @@ function Dashboard() {
             {lineData.length === 0 || safeCategories.length === 0 ? (
               <span style={{ color: "#aaa", fontSize: "1.2rem", fontStyle: "italic" }}>No spending data to display.</span>
             ) : (
-              <ResponsiveContainer width="100%" height={320}>
-                <LineChart data={lineData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
-                  <XAxis dataKey="name" stroke="#fff" />
-                  <YAxis stroke="#fff" />
-                  <Tooltip contentStyle={{ background: "#222", color: "#fff" }} />
-                  <Legend wrapperStyle={{ color: "#fff" }} />
-                  {safeCategories.map((cat, i) => (
-                    <Line key={cat} type="monotone" dataKey={cat} stroke={['#8884d8','#82ca9d','#ffc658','#ff7300','#00c49f','#0088fe','#ff0000','#a832a6'][i%8]} strokeWidth={2} dot={false} isAnimationActive={true} />
-                  ))}
-                </LineChart>
-              </ResponsiveContainer>
+              <SpendingLineChart data={lineData} categories={safeCategories} />
             )}
           </div>
           <h3 style={{ fontSize: "1.45rem", fontWeight: 700, color: "#fff", marginBottom: 18, textAlign: "center" }}>Pie Chart (Spending by Category)</h3>
@@ -173,26 +163,7 @@ function Dashboard() {
             {pieData.length === 0 ? (
               <span style={{ color: "#aaa", fontSize: "1.2rem", fontStyle: "italic" }}>No spending data to display.</span>
             ) : (
-              <ResponsiveContainer width="100%" height={320}>
-                <PieChart>
-                  <Pie
-                    data={pieData}
-                    dataKey="value"
-                    nameKey="name"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={110}
-                    label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(1)}%`}
-                    isAnimationActive={true}
-                  >
-                    {pieData.map((entry, i) => (
-                      <Cell key={`cell-${i}`} fill={['#8884d8','#82ca9d','#ffc658','#ff7300','#00c49f','#0088fe','#ff0000','#a832a6'][i%8]} />
-                    ))}
-                  </Pie>
-                  <Tooltip contentStyle={{ background: "#222", color: "#fff" }} />
-                  <Legend wrapperStyle={{ color: "#fff" }} />
-                </PieChart>
-              </ResponsiveContainer>
+              <SpendingPieChart data={pieData} />
             )}
           </div>
         </div>
