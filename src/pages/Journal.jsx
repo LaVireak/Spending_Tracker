@@ -3,19 +3,20 @@ import NavBar from "../components/NavBar";
 
 const LOCAL_KEY = "spending-records";
 const CATEGORY_KEY = "spending-categories";
+const defaultCategories = ["Food", "Transport", "Utilities", "Entertainment", "Health", "Shopping", "Education", "Other"];
 
 function loadCategories() {
-  const local = localStorage.getItem(CATEGORY_KEY);
-  if (local) {
-    try {
-      const parsed = JSON.parse(local);
-      return Array.isArray(parsed) ? parsed : [];
-    } catch {
-      return [];
-    }
+  let local = localStorage.getItem(CATEGORY_KEY);
+  if (!local) {
+    localStorage.setItem(CATEGORY_KEY, JSON.stringify(defaultCategories));
+    local = JSON.stringify(defaultCategories);
   }
-  // fallback to default
-  return ["Food", "Transport", "Utilities", "Entertainment", "Health", "Shopping", "Education", "Other"];
+  try {
+    const parsed = JSON.parse(local);
+    return Array.isArray(parsed) ? parsed : defaultCategories;
+  } catch {
+    return defaultCategories;
+  }
 }
 
 

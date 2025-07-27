@@ -34,27 +34,30 @@ function Dashboard() {
 
   // Helper to load records and categories from localStorage
   function loadData() {
-    const local = localStorage.getItem(LOCAL_KEY);
-    if (local) {
-      try {
-        const parsed = JSON.parse(local);
-        setRecords(Array.isArray(parsed) ? parsed : []);
-      } catch {
-        setRecords([]);
-      }
-    } else {
+    // Ensure records key exists
+    let local = localStorage.getItem(LOCAL_KEY);
+    if (!local) {
+      localStorage.setItem(LOCAL_KEY, JSON.stringify([]));
+      local = '[]';
+    }
+    try {
+      const parsed = JSON.parse(local);
+      setRecords(Array.isArray(parsed) ? parsed : []);
+    } catch {
       setRecords([]);
     }
-    const cats = localStorage.getItem(CATEGORY_KEY);
-    if (cats) {
-      try {
-        const parsed = JSON.parse(cats);
-        setCategories(Array.isArray(parsed) ? parsed : []);
-      } catch {
-        setCategories([]);
-      }
-    } else {
-      setCategories([]);
+    // Ensure categories key exists
+    let cats = localStorage.getItem(CATEGORY_KEY);
+    const defaultCategories = ["Food", "Transport", "Utilities", "Entertainment", "Health", "Shopping", "Education", "Other"];
+    if (!cats) {
+      localStorage.setItem(CATEGORY_KEY, JSON.stringify(defaultCategories));
+      cats = JSON.stringify(defaultCategories);
+    }
+    try {
+      const parsed = JSON.parse(cats);
+      setCategories(Array.isArray(parsed) ? parsed : defaultCategories);
+    } catch {
+      setCategories(defaultCategories);
     }
   }
 
