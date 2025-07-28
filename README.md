@@ -1,16 +1,6 @@
 # Spending Tracker
 
 <p align="center">
-  <img src="public/vite.svg" alt="Vite Logo" width="60" />
-  <img src="src/assets/react.svg" alt="React Logo" width="60" />
-</p>
-
-<p align="center">
-  <b>Modern, privacy-first React app for tracking and analyzing your personal expenses.</b><br>
-  <i>All data is stored locally in your browser—no backend, no account, 100% private.</i>
-</p>
-
-<p align="center">
   <a href="https://github.com/LaVireak/Spending_Tracker"><img src="https://img.shields.io/github/stars/LaVireak/Spending_Tracker?style=social" alt="GitHub stars"></a>
   <a href="https://github.com/LaVireak/Spending_Tracker"><img src="https://img.shields.io/github/license/LaVireak/Spending_Tracker" alt="License"></a>
   <a href="https://lavireak.github.io/Spending_Tracker/"><img src="https://img.shields.io/badge/Live%20Demo-Online-blue?logo=githubpages" alt="Live Demo"></a>
