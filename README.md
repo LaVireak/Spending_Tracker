@@ -1,14 +1,14 @@
 # Spending Tracker
 
+Spending Tracker is a React.js web app that lets you easily log your daily spending, create custom categories, and visualize your expenses with interactive charts—all data stays on your device, with no accounts or cloud required.
+
 <p align="center">
-  <a href="https://github.com/LaVireak/Spending_Tracker"><img src="https://img.shields.io/github/stars/LaVireak/Spending_Tracker?style=social" alt="GitHub stars"></a>
-  <a href="https://github.com/LaVireak/Spending_Tracker"><img src="https://img.shields.io/github/license/LaVireak/Spending_Tracker" alt="License"></a>
   <a href="https://lavireak.github.io/Spending_Tracker/"><img src="https://img.shields.io/badge/Live%20Demo-Online-blue?logo=githubpages" alt="Live Demo"></a>
 </p>
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Journal Page**: Add, view, and manage spending records (date, category, amount, note)
 - **Custom Categories**: Add your own spending categories on the fly
@@ -20,7 +20,7 @@
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 1. **Install dependencies**
    ```powershell
@@ -34,30 +34,30 @@
 
 ---
 
-## 🌐 Live Demo
+## Live Demo
 
 - [View on GitHub Pages](https://lavireak.github.io/Spending_Tracker/)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Spending_Tracker/
 ├── public/
-│   ├── spending-category.json   # Initial spending categories
-│   ├── Dashboard.png           # Dashboard screenshot
-│   ├── Journal.png             # Journal screenshot
-│   └── vite.svg                # Vite logo asset
+│   ├── spending-category.json   
+│   ├── Dashboard.png           
+│   ├── Journal.png             
+│   └── vite.svg                
 ├── src/
 │   ├── App.jsx
 │   ├── App.css
 │   ├── main.jsx
 │   ├── assets/
-│   │   └── react.svg           # React logo asset
-│   ├── components/             # Reusable UI components
-│   ├── pages/                  # Journal and Dashboard pages
-│   └── utils/                  # Utility functions
+│   │   └── react.svg           
+│   ├── components/            
+│   ├── pages/                  
+│   └── utils/                  
 ├── index.html
 ├── package.json
 ├── vite.config.js
@@ -66,7 +66,7 @@ Spending_Tracker/
 
 ---
 
-## ⚙️ Customization
+## Customization
 
 - **Add new categories** directly from the Journal page
 - All data is stored in your browser's `localStorage` (no cloud sync)
@@ -74,7 +74,7 @@ Spending_Tracker/
 
 ---
 
-## 🖼️ Screenshots
+## Screenshots
 
 <p align="center">
   <img src="public/Dashboard.png" alt="Dashboard Screenshot" width="70%" />
@@ -84,7 +84,7 @@ Spending_Tracker/
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 - [React 19](https://react.dev/)
 - [React Router DOM 7](https://reactrouter.com/)
@@ -93,7 +93,7 @@ Spending_Tracker/
 
 ---
 
-## 👨‍💻 Credits
+## Credits
 
 - Developed by **Vireak La**, **Chhialy Klo**, and **SHANN NEIL ORDONEZ ESTABILLO**
 
