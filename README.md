@@ -3,6 +3,7 @@
 
 A React.js web app for tracking and analyzing personal spending. All data is stored in localStorage. No backend required.
 
+
 ## Features
 - Journal page: Add spending records (date, category, amount, note)
 - Add new spending categories
